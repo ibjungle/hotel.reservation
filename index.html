@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Header - شريط المتجر</title>
+
+<!-- خط مزخرف شبيه بالصورة -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper-bg: #fffaf2;
+    --accent: #ff6f00; /* لون الشعار البرتقالي */
+    --text-dark: #222;
+    --paper-border: rgba(0,0,0,0.06);
+  }
+
+  /* صندوق عريض فوق الصفحة */
+  .top-sheet{
+    width:100%;
+    box-sizing:border-box;
+    background: 
+      /* خطوط ورقية خفيفة */
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.02) 0px,
+        rgba(0,0,0,0.02) 1px,
+        transparent 1px,
+        transparent 26px
+      ),
+      linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,245,240,0.6)),
+      var(--paper-bg);
+    border-bottom: 1px solid var(--paper-border);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 14px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* جهة الشعار (يسار) */
+  .brand {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-height:48px;
+  }
+
+  .brand .logo-text{
+    font-family: "Pacifico", cursive; /* خط مزخرف */
+    font-size: 34px;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  /* أيقونات الكف والنخلة الصغيرة */
+  .brand .icons{
+    display:flex;
+    gap:6px;
+    align-items:center;
+    margin-left:6px;
+    transform: translateY(2px);
+  }
+  .icon {
+    width:20px;
+    height:20px;
+    display:inline-block;
+  }
+
+  /* جهة اليمين (مثال: كلمة Réservation) */
+  .right-area{
+    color:var(--text-dark);
+    font-size:16px;
+    font-weight:600;
+    opacity:0.95;
+  }
+
+  /* تجاوب */
+  @media (max-width:520px){
+    .brand .logo-text{ font-size:26px; }
+    .right-area{ font-size:14px; }
+    .top-sheet{ padding:10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top-sheet" dir="ltr">
+  <div class="brand" aria-label="شعار المتجر">
+    <!-- اسم المتجر مزخرف -->
+    <div class="logo-text">IB Jungle
+      <div class="icons" aria-hidden="true">
+        <!-- بصمة/كف (SVG) -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6.2 7.3C7.1 5.6 9.1 4.9 10.9 5.6c1.8.7 2.4 2.8 1.6 4.6-.8 1.8-2.9 2.5-4.7 1.8-1.8-.7-2.5-2.8-1.6-4.7z" fill="#222"/>
+          <path d="M4.2 11.8c.9-1.9 3.2-3 5-2.4 1.8.6 2.8 2.6 1.9 4.5-.9 1.9-3.2 3-5 2.4-1.8-.6-2.8-2.6-1.9-4.5z" fill="#222"/>
+          <path d="M13.8 13.9c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1-.6.6-1.5.6-2.1 0-.6-.6-.6-1.5 0-2.1z" fill="#222"/>
+        </svg>
+
+        <!-- نخلة صغيرة (SVG) -->
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 22s1-6 0-8c-1-2 1-6 3-6s1 2 1 2 2-3 4-2c0 0-2 2-2 4 0 2 1 5 0 8 0 0-6 2-6 2z" fill="#2e7d32"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- يمكن استبدال النص بأي شيء آخر (روابط، أيقونات) -->
+  <div class="right-area">Réservation</div>
+</header>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>IB JUNGLE — Réservation</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink-bg: #b43e6e;
+    --card-bg: #d193b0;
+    --accent: #f28c2a;
+    --accent-dark: #e77912;
+    --muted: #6b6b6b;
+    --accent-green: #2b8a4b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: 'Inter', system-ui, Arial;
+    background: linear-gradient(180deg, var(--pink-bg) 0%, #e65fbd 100%);
+    color:#222;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  a{ color:inherit; text-decoration:none }
+
+  /* HERO */
+  .hero{
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:56px 20px;
+    position:relative;
+    text-align:center;
+  }
+  .logo{
+    font-family: 'Pacifico', cursive;
+    font-size:64px;
+    color:#d93b2f;
+    margin:0 0 8px 0;
+  }
+  .hero-card{
+    display:inline-block;
+    background:var(--card-bg);
+    padding:20px 28px;
+    border-radius:14px;
+    border:3px solid rgba(242,140,42,0.12);
+    box-shadow: 0 10px 30px rgba(46,60,80,0.06);
+    max-width:940px;
+    width:100%;
+  }
+  .hero-card h2{ margin:0; font-size:22px; font-weight:700 }
+  .hero-card p{ margin:8px 0 0 0; color:var(--muted) }
+
+  .cta{
+    margin-top:18px;
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    background: linear-gradient(180deg,var(--accent), var(--accent-dark));
+    color:rgb(252, 121, 193);
+    border-radius:40px;
+    padding:14px 30px;
+    font-weight:700;
+    font-size:18px;
+    border:none;
+    cursor:pointer;
+    box-shadow: 0 8px 18px rgba(226,120,36,0.28);
+  }
+
+  /* emojis jumping */
+  .emoji-row{ margin-top:18px; display:flex; gap:18px; justify-content:center; font-size:36px }
+  @keyframes bounce {
+    0%{ transform:translateY(0) }
+    25%{ transform:translateY(-20px) scale(1.06) }
+    50%{ transform:translateY(0) }
+    75%{ transform:translateY(-8px) }
+    100%{ transform:translateY(0) }
+  }
+  .emoji{ display:inline-block; transform-origin:center bottom }
+  .emoji.cat{ animation: bounce 1.4s ease-in-out infinite; animation-delay:0s }
+  .emoji.heart{ animation: bounce 1.4s ease-in-out infinite; animation-delay:0.12s }
+  .emoji.palm{ animation: bounce 1.4s ease-in-out infinite; animation-delay:0.24s }
+
+  /* Reservation area */
+  .container{
+    max-width:1200px;
+    margin:30px auto;
+    padding:0 20px 80px;
+  }
+
+  .section-title{
+    text-align:center;
+    font-size:26px;
+    font-weight:700;
+    margin:18px 0 22px;
+    color:#222;
+  }
+
+  /* cards */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    align-items:stretch;
+  }
+  .card{
+    background:var(--card-bg);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow: 0 8px 22px rgba(35,50,80,0.06);
+    border:2px solid transparent;
+    transition:transform .18s ease, border-color .18s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .card.selected{ transform:translateY(-6px); border-color: rgba(242,140,42,0.18) }
+  .card .img{
+    height:180px;
+    background:linear-gradient(120deg,#fbe8ff,#fff7f9);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
+  }
+  .card .content{ padding:16px 18px; flex:1; display:flex; flex-direction:column; gap:12px }
+  .card .title-row{ display:flex; justify-content:space-between; align-items:center }
+  .card h3{ margin:0; font-size:18px }
+  .price{ color:var(--accent-dark); font-weight:700; font-size:20px }
+  .card p{ margin:0; color:var(--muted); font-size:14px }
+  .features{ margin-top:6px; color:var(--muted); font-size:13px; line-height:1.6 }
+  .selectBtn{
+    margin-top:auto;
+    align-self:flex-start;
+    background:transparent;
+    border:1px solid rgba(0,0,0,0.06);
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    color:#333;
+  }
+
+  /* duration box */
+  .box{
+    background:var(--card-bg);
+    padding:26px;
+    border-radius:14px;
+    border:3px solid rgba(242,140,42,0.10);
+    box-shadow: 0 10px 30px rgba(46,60,80,0.04);
+    margin-top:24px;
+  }
+  .center{ text-align:center }
+  .counter{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    align-items:center;
+    margin-top:12px;
+  }
+  .counter button{
+    width:56px; height:56px; border-radius:999px; border:none;
+    background:var(--accent); color:white; font-size:26px; cursor:pointer;
+    box-shadow:0 8px 20px rgba(226,120,36,0.22)
+  }
+  .days-display{ font-size:32px; font-weight:700 }
+
+  /* form */
+  form.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:18px;
+  }
+  input[type="text"], input[type="tel"]{
+    width:100%;
+    padding:12px 14px;
+    border-radius:8px;
+    border:1px solid rgba(0,0,0,0.08);
+    font-size:15px;
+  }
+  .full{ grid-column:1 / -1 }
+
+  /* bottom row: total + reserve */
+  .bottom-row{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:22px;
+  }
+  .total{
+    font-size:20px;
+    font-weight:700;
+    color:var(--accent-dark);
+  }
+  .reserveBtn{
+    background: linear-gradient(180deg,var(--accent), var(--accent-dark));
+    color:white; padding:14px 26px; border-radius:40px; border:none; font-weight:700; cursor:pointer;
+    box-shadow: 0 10px 26px rgba(226,120,36,0.24);
+  }
+
+  /* small credit */
+  .credit{ text-align:right; color:#9a9a9a; font-size:12px; margin-top:12px }
+
+  /* responsive */
+  @media (max-width:980px){
+    .cards{ grid-template-columns:repeat(2,1fr) }
+  }
+  @media (max-width:720px){
+    .cards{ grid-template-columns:1fr }
+    form.grid{ grid-template-columns:1fr }
+    .bottom-row{ flex-direction:column; align-items:stretch; gap:12px }
+  }
+</style>
+</head>
+<body>
+
+ 
+
+  <!-- RESERVATION -->
+  <main class="container" id="reservation">
+    <h3 class="section-title">Choisissez le type de chambre 🏨</h3>
+
+    <div class="cards" id="roomCards">
+      <!-- NRML -->
+<article class="card selected" data-room="NRML" data-price="600" tabindex="0">
+  <div class="img">🏠</div>
+  <div class="content">
+    <div class="title-row">
+      <h3>NRML</h3>
+      <div class="price">
+        <span style="text-decoration: line-through; color: #999; margin-right: 5px;">900 DA</span>
+        600 DA <span style="font-weight:300; font-size:13px">/ nuit</span>
+      </div>
+    </div>
+    <p>Séjour confortable avec repas de base gratuits</p>
+    <div class="features">
+      ✓ Chambre confortable<br>
+      ✓ Repas de base inclus<br>
+      ✓ Litière propre<br>
+      ✓ Surveillance 24h/24
+    </div>
+  </div>
+</article>
+
+    
+
+      <!-- VIP -->
+<article class="card" data-room="VIP" data-price="800" tabindex="0">
+  <div class="img">🏰</div>
+  <div class="content">
+    <div class="title-row">
+      <h3>VIP</h3>
+      <div class="price">
+        <span style="text-decoration: line-through; color: #999; margin-right: 5px;">1200 DA</span>
+        800 DA <span style="font-weight:300; font-size:13px">/ nuit</span>
+      </div>
+    </div>
+    <p>Séjour royal avec repas gastronomiques, séances de câlins et cadeaux exclusifs</p>
+    <div class="features">
+      ✓ Suite luxueuse<br>
+      ✓ Repas gastronomiques<br>
+      ✓ Séances de câlins personnalisées<br>
+      ✓ Service de spa félin
+    </div>
+  </div>
+</article>
+    </div>
+
+    <!-- DURATION -->
+    <section class="box" aria-label="Durée du séjour" style="margin-top:22px">
+      <h3 class="section-title" style="margin-top:0">Durée du séjour 📅</h3>
+      <div class="center">
+        <div class="counter" role="group" aria-label="Contrôle du nombre de jours">
+          <button id="decDay" aria-label="Réduire le nombre de jours">−</button>
+          <div class="days-display" id="days">1</div>
+          <button id="incDay" aria-label="Augmenter le nombre de jours">+</button>
+        </div>
+        <div style="color:var(--muted); margin-top:8px">jour(s)</div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="box" style="margin-top:22px">
+      <h3 class="section-title" style="margin-top:0">Informations de réservation 📝</h3>
+
+      <form id="bookingForm" class="grid" onsubmit="return false;">
+        <input type="text" id="firstName" placeholder="Prénom *" required>
+        <input type="text" id="lastName" placeholder="Nom *" required>
+        <input type="tel" id="phone" placeholder="Numéro de téléphone *" required>
+        <input type="text" id="catName" placeholder="Nom du chat *" required>
+
+        <div class="full" style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:8px">
+          <div class="total" id="totalText">Total : 600 DA</div>
+          <button id="reserveBtn" class="reserveBtn" type="button">Réserver maintenant 🎉</button>
+        </div>
+      </form>
+    <div class="credit">
+  <a href="https://www.instagram.com/arke.officiel?igsh=NDdnbHE5dWhzYWc=" target="_blank" style="color: black; text-decoration: none;">
+    Designed by <span style="color: gold;">ARKÉ</span>
+  </a>
+</div>
+    </section>
+  </main>
+
+<script>
+  // Prices and initial state
+  const prices = { NRML:600, VIP:800 };
+  let selected = 'NRML';
+  let days = 1;
+
+  const cards = document.querySelectorAll('.card');
+  const daysDisplay = document.getElementById('days');
+  const totalText = document.getElementById('totalText');
+
+  function updateSelection(newSel, el){
+    selected = newSel;
+    cards.forEach(c => c.classList.remove('selected'));
+    if(el) el.classList.add('selected');
+    updateTotal();
+  }
+
+  function updateTotal(){
+    const total = prices[selected] * days;
+    totalText.textContent = `Total : ${total.toLocaleString('fr-FR')} DA`;
+  }
+
+  // card click handlers
+  cards.forEach(card=>{
+    card.addEventListener('click', (e)=>{
+      const room = card.getAttribute('data-room');
+      updateSelection(room, card);
+    });
+    // select button inside
+    const btn = card.querySelector('.selectBtn');
+    if(btn) btn.addEventListener('click', (ev)=>{
+      ev.stopPropagation();
+      const room = card.getAttribute('data-room');
+      updateSelection(room, card);
+      // small visual bounce
+      btn.animate([{transform:'scale(1)'},{transform:'scale(0.98)'},{transform:'scale(1)'}],{duration:160});
+    });
+    // keyboard accessibility
+    card.addEventListener('keydown', (ev)=>{
+      if(ev.key === 'Enter' || ev.key === ' '){
+        ev.preventDefault();
+        card.click();
+      }
+    });
+  });
+
+  // days controls
+  document.getElementById('incDay').addEventListener('click', ()=>{
+    days++;
+    daysDisplay.textContent = days;
+    updateTotal();
+  });
+  document.getElementById('decDay').addEventListener('click', ()=>{
+    if(days > 1) days--;
+    daysDisplay.textContent = days;
+    updateTotal();
+  });
+
+  // discover scroll
+  document.getElementById('discover').addEventListener('click', ()=>{
+    document.getElementById('reservation').scrollIntoView({behavior:'smooth'});
+    // pulse emojis a bit
+    const emojis = document.querySelectorAll('.emoji');
+    emojis.forEach((e,i)=>{
+      e.animate([{ transform:'translateY(0) scale(1)' }, { transform:'translateY(-30px) scale(1.12)' }, { transform:'translateY(0) scale(1)' }], { duration:450, delay: i*60, easing:'cubic-bezier(.2,.8,.2,1)'});
+    });
+  });
+
+  // reserve action (simple validation + demo)
+  document.getElementById('reserveBtn').addEventListener('click', ()=>{
+    const f = document.getElementById('firstName').value.trim();
+    const l = document.getElementById('lastName').value.trim();
+    const ph = document.getElementById('phone').value.trim();
+    const cat = document.getElementById('catName').value.trim();
+
+    if(!f || !l || !ph || !cat){
+      alert('Veuillez remplir tous les champs obligatoires.');
+      return;
+    }
+
+    // mock confirmation
+    const total = prices[selected] * days;
+    alert(`Réservation envoyée !\n\nNom: ${f} ${l}\nTéléphone: ${ph}\nChat: ${cat}\nType: ${selected}\nJours: ${days}\nTotal: ${total} DA\n\nNous vous contacterons bientôt pour confirmer.`);
+    // ici vous pouvez envoyer la data via fetch à votre backend ou intégrer un form handler
+  });
+
+  // initial total
+  updateTotal();
+</script>
+</body>
+<footer style="background-color: #ffb6c1; padding: 20px; text-align: center; margin-top: 30px; border-top: 2px solid #fff;">
+  <h3 style="margin-bottom: 10px;">📞 Contact & Réseaux Sociaux</h3>
+  
+  <p style="margin: 5px 0;">
+    📱 Téléphone : <a href="tel:+213 675850113" style="color: #000; text-decoration: none;">+213 675850113</a>
+  </p>
+  
+  <p style="margin: 5px 0;">
+    🌐 Site Web : <a href="https://www.ibjungle.com" target="_blank" style="color: #000; text-decoration: none;">www.ibjungle.com</a>
+  </p>
+  
+  <p style="margin: 5px 0;">
+    📸 Instagram : <a href="https://www.instagram.com/ib_jungle?igsh=MWY5eDM2MGVybmRyMw==" target="_blank" style="color: #000; text-decoration: none;">@ib_jungle</a>
+  </p>
+  
+  <p style="margin: 5px 0;">
+    🎵 TikTok : <a href="https://www.tiktok.com/@ib_jungle?_t=ZS-8yk8LhGRUyA&_r=1" target="_blank" style="color: #000; text-decoration: none;">@ib_jungle</a>
+  </p>
+</footer>
+</html>
