@@ -341,100 +341,136 @@
 
  
 
-  <!-- RESERVATION -->
-  <main class="container" id="reservation">
-    <h3 class="section-title">Choisissez le type de chambre 🏨</h3>
+ <!-- RESERVATION -->
+<main class="container" id="reservation">
+  <h3 class="section-title">Choisissez le type de chambre 🏨</h3>
 
-    <div class="cards" id="roomCards">
-      <!-- NRML -->
-<article class="card selected" data-room="NRML" data-price="600" tabindex="0">
-  <div class="img">🏠</div>
-  <div class="content">
-    <div class="title-row">
-      <h3>NRML</h3>
-      <div class="price">
-        <span style="text-decoration: line-through; color: #999; margin-right: 5px;">900 DA</span>
-        600 DA <span style="font-weight:300; font-size:13px">/ nuit</span>
-      </div>
-    </div>
-    <p>Séjour confortable avec repas de base gratuits</p>
-    <div class="features">
-      ✓ Chambre confortable<br>
-      ✓ Repas de base inclus<br>
-      ✓ Litière propre<br>
-      ✓ Surveillance 24h/24
-    </div>
-  </div>
-</article>
-
-    
-
-      <!-- VIP -->
-<article class="card" data-room="VIP" data-price="800" tabindex="0">
-  <div class="img">🏰</div>
-  <div class="content">
-    <div class="title-row">
-      <h3>VIP</h3>
-      <div class="price">
-        <span style="text-decoration: line-through; color: #999; margin-right: 5px;">1200 DA</span>
-        800 DA <span style="font-weight:300; font-size:13px">/ nuit</span>
-      </div>
-    </div>
-    <p>Séjour royal avec repas gastronomiques, séances de câlins et cadeaux exclusifs</p>
-    <div class="features">
-      ✓ Suite luxueuse<br>
-      ✓ Repas gastronomiques<br>
-      ✓ Séances de câlins personnalisées<br>
-      ✓ Service de spa félin
-    </div>
-  </div>
-</article>
-    </div>
-
-    <!-- DURATION -->
-    <section class="box" aria-label="Durée du séjour" style="margin-top:22px">
-      <h3 class="section-title" style="margin-top:0">Durée du séjour 📅</h3>
-      <div class="center">
-        <div class="counter" role="group" aria-label="Contrôle du nombre de jours">
-          <button id="decDay" aria-label="Réduire le nombre de jours">−</button>
-          <div class="days-display" id="days">1</div>
-          <button id="incDay" aria-label="Augmenter le nombre de jours">+</button>
+  <div class="cards" id="roomCards">
+    <!-- NRML -->
+    <article class="card selected" data-room="NRML" data-price="600" tabindex="0">
+      <div class="img">🏠</div>
+      <div class="content">
+        <div class="title-row">
+          <h3>NRML</h3>
+          <div class="price">
+            <span style="text-decoration: line-through; color: #999; margin-right: 5px;">900 DA</span>
+            600 DA <span style="font-weight:300; font-size:13px">/ nuit</span>
+          </div>
         </div>
-        <div style="color:var(--muted); margin-top:8px">jour(s)</div>
+        <p>Séjour confortable avec repas de base gratuits</p>
+        <div class="features">
+          ✓ Chambre confortable<br>
+          ✓ Repas de base inclus<br>
+          ✓ Litière propre<br>
+          ✓ Surveillance 24h/24
+        </div>
       </div>
-    </section>
+    </article>
 
- <form id="bookingForm" class="grid" action="https://formspree.io/f/xwpqaorg" method="POST">
-  <input type="text" name="Prénom" placeholder="Prénom *" required>
-  <input type="text" name="Nom" placeholder="Nom *" required>
-  <input type="tel" name="Téléphone" placeholder="Numéro de téléphone *" required>
-  <input type="text" name="Nom du chat" placeholder="Nom du chat *" required>
-
-  <!-- السعر المخفي الذي سيتغير -->
-  <input type="hidden" id="totalInput" name="Total" value="600 DA">
-
-  <!-- مثال لاختيار الأيام -->
-  <label for="days">Nombre de jours :</label>
-  <input type="number" id="days" name="Jours" min="1" value="1">
-
-  <div class="full" style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:8px">
-    <div class="total" id="totalText">Total : 600 DA</div>
-    <button class="reserveBtn" type="submit">Réserver maintenant 🎉</button>
+    <!-- VIP -->
+    <article class="card" data-room="VIP" data-price="800" tabindex="0">
+      <div class="img">🏰</div>
+      <div class="content">
+        <div class="title-row">
+          <h3>VIP</h3>
+          <div class="price">
+            <span style="text-decoration: line-through; color: #999; margin-right: 5px;">1200 DA</span>
+            800 DA <span style="font-weight:300; font-size:13px">/ nuit</span>
+          </div>
+        </div>
+        <p>Séjour royal avec repas gastronomiques, séances de câlins et cadeaux exclusifs</p>
+        <div class="features">
+          ✓ Suite luxueuse<br>
+          ✓ Repas gastronomiques<br>
+          ✓ Séances de câlins personnalisées<br>
+          ✓ Service de spa félin
+        </div>
+      </div>
+    </article>
   </div>
-</form>
 
+  <!-- DURATION -->
+  <section class="box" aria-label="Durée du séjour" style="margin-top:22px">
+    <h3 class="section-title" style="margin-top:0">Durée du séjour 📅</h3>
+    <div class="center">
+      <div class="counter" role="group" aria-label="Contrôle du nombre de jours">
+        <button id="decDay" aria-label="Réduire le nombre de jours">−</button>
+        <div class="days-display" id="days">1</div>
+        <button id="incDay" aria-label="Augmenter le nombre de jours">+</button>
+      </div>
+      <div style="color:var(--muted); margin-top:8px">jour(s)</div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="box" style="margin-top:22px">
+    <h3 class="section-title" style="margin-top:0">Informations de réservation 📝</h3>
+
+    <form id="bookingForm" class="grid" action="https://formspree.io/f/xwpqaorg" method="POST">
+      <input type="text" name="Prénom" placeholder="Prénom *" required>
+      <input type="text" name="Nom" placeholder="Nom *" required>
+      <input type="tel" name="Téléphone" placeholder="Numéro de téléphone *" required>
+      <input type="text" name="Nom du chat" placeholder="Nom du chat *" required>
+
+      <!-- Champ caché pour le total -->
+      <input type="hidden" name="Total" value="600 DA">
+
+      <div class="full" style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:8px">
+        <div class="total" id="totalText">Total : 600 DA</div>
+        <button class="reserveBtn" type="submit">Réserver maintenant 🎉</button>
+      </div>
+    </form>
+
+    <div class="credit">
+      <a href="https://www.instagram.com/arke.officiel?igsh=NDdnbHE5dWhzYWc=" target="_blank" style="color: black; text-decoration: none;">
+        Designed by <span style="color: gold;">ARKÉ</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- SCRIPT -->
 <script>
-  const pricePerDay = 600; // السعر لليوم الواحد
-  const daysInput = document.getElementById('days');
+  const daysDisplay = document.getElementById('days');
+  const decDayBtn = document.getElementById('decDay');
+  const incDayBtn = document.getElementById('incDay');
   const totalText = document.getElementById('totalText');
-  const totalInput = document.getElementById('totalInput');
+  const totalInput = document.querySelector('input[name="Total"]');
 
-  daysInput.addEventListener('input', function() {
-    const days = parseInt(daysInput.value) || 1;
-    const total = days * pricePerDay;
+  let selectedCard = document.querySelector('.card.selected');
+  let pricePerNight = parseInt(selectedCard.getAttribute('data-price'));
+  let days = 1;
+
+  function updateTotal() {
+    const total = days * pricePerNight;
     totalText.textContent = `Total : ${total} DA`;
-    totalInput.value = `${total} DA`; // تحديث الحقل المخفي
+    totalInput.value = `${total} DA`;
+  }
+
+  incDayBtn.addEventListener('click', () => {
+    days++;
+    daysDisplay.textContent = days;
+    updateTotal();
   });
+
+  decDayBtn.addEventListener('click', () => {
+    if (days > 1) {
+      days--;
+      daysDisplay.textContent = days;
+      updateTotal();
+    }
+  });
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      pricePerNight = parseInt(card.getAttribute('data-price'));
+      updateTotal();
+    });
+  });
+
+  updateTotal();
 </script>
 
 <script>
