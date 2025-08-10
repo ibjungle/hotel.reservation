@@ -404,28 +404,31 @@
       </div>
     </section>
 
-    <!-- FORM -->
-    <section class="box" style="margin-top:22px">
-      <h3 class="section-title" style="margin-top:0">Informations de réservation 📝</h3>
+   <!-- FORM -->
+<section class="box" style="margin-top:22px">
+  <h3 class="section-title" style="margin-top:0">Informations de réservation 📝</h3>
 
-      <form id="bookingForm" class="grid" onsubmit="return false;">
-        <input type="text" id="firstName" placeholder="Prénom *" required>
-        <input type="text" id="lastName" placeholder="Nom *" required>
-        <input type="tel" id="phone" placeholder="Numéro de téléphone *" required>
-        <input type="text" id="catName" placeholder="Nom du chat *" required>
+  <form id="bookingForm" class="grid" action="https://formspree.io/f/xwpqaorg" method="POST">
+    <input type="text" name="Prénom" placeholder="Prénom *" required>
+    <input type="text" name="Nom" placeholder="Nom *" required>
+    <input type="tel" name="Téléphone" placeholder="Numéro de téléphone *" required>
+    <input type="text" name="Nom du chat" placeholder="Nom du chat *" required>
 
-        <div class="full" style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:8px">
-          <div class="total" id="totalText">Total : 600 DA</div>
-          <button id="reserveBtn" class="reserveBtn" type="button">Réserver maintenant 🎉</button>
-        </div>
-      </form>
-    <div class="credit">
-  <a href="https://www.instagram.com/arke.officiel?igsh=NDdnbHE5dWhzYWc=" target="_blank" style="color: black; text-decoration: none;">
-    Designed by <span style="color: gold;">ARKÉ</span>
-  </a>
-</div>
-    </section>
-  </main>
+    <!-- Vous pouvez ajouter un champ caché pour le prix -->
+    <input type="hidden" name="Total" value="600 DA">
+
+    <div class="full" style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:8px">
+      <div class="total" id="totalText">Total : 600 DA</div>
+      <button class="reserveBtn" type="submit">Réserver maintenant 🎉</button>
+    </div>
+  </form>
+
+  <div class="credit">
+    <a href="https://www.instagram.com/arke.officiel?igsh=NDdnbHE5dWhzYWc=" target="_blank" style="color: black; text-decoration: none;">
+      Designed by <span style="color: gold;">ARKÉ</span>
+    </a>
+  </div>
+</section>
 
 <script>
   // Prices and initial state
